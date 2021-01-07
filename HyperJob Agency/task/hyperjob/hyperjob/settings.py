@@ -37,8 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'resume',
-    'vacancy',
+    'resume.apps.ResumeConfig',
+    'vacancy.apps.VacancyConfig',
 ]
 
 MIDDLEWARE = [
@@ -56,7 +56,7 @@ ROOT_URLCONF = 'hyperjob.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'hyperjob/templates')],
+        'DIRS': ['hyperjob/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -78,7 +78,7 @@ WSGI_APPLICATION = 'hyperjob.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.environ.get('HYPERSKILL_TEST_DATABASE') or os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME': os.environ.get('HYPERSKILL_TEST_DATABASE') or os.path.join(BASE_DIR, 'db.test.sqlite3'),
     }
 }
 
