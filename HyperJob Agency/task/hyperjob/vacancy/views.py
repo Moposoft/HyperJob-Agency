@@ -7,3 +7,5 @@ class VacanciesView(View):
     def get(self, request, *args, **kwargs):
         vacancies = Vacancy.objects.all()
         return render(request, 'vacancy/index.html', {'vacancies': vacancies})
+
+
