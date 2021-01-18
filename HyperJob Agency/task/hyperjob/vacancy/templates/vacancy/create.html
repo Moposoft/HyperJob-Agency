@@ -2,12 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Login</title>
+    <title>Create Vacancy</title>
 </head>
 <body>
+    <p>Create Vacancy</p>
     <form method="post" action="">{% csrf_token %}
-    <table>{{ form.as_table }}</table>
-    <button type="submit">Login</button>
+        <textarea name="description"></textarea>
+        <button type="submit">Send</button>
     </form>
 </body>
 </html>

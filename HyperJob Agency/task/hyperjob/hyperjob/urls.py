@@ -22,8 +22,11 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.IndexView.as_view(), name='index'),
     path('vacancies/', include('vacancy.urls')),
+    path('vacancy/', include('vacancy.urls')),
     path('resumes/', include('resume.urls')),
+    path('resume/', include('resume.urls')),
     path('login/', views.UserLoginView.as_view(), name='login'),
     path('signup/', views.UserCreationView.as_view(), name='signup'),
     path('logout/', LogoutView.as_view(), name='logout'),
+    path('home/', views.ProfileView.as_view(), name='home'),
 ]
